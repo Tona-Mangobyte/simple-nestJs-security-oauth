@@ -1,11 +1,9 @@
 import { ArticleService } from '../services/article.service';
 import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
 import { CreateArticleDto } from '../domain/dto/create-article.dto';
 import { Article } from '../domain/entities/article.entity';
 import { DeleteResult } from 'typeorm';
 
-@ApiTags('Article')
 @Controller('/articles')
 export class ArticleController {
   constructor(private readonly articleService: ArticleService) {}
