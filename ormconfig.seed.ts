@@ -1,0 +1,22 @@
+module.exports = {
+  type: 'mysql',
+  host: 'localhost',
+  port: 3306,
+  username: 'root',
+  password: '12345',
+  database: 'nest_test',
+  // charset: 'utf8mb4',
+  supportBigNumbers: true,
+  bigNumberStrings: false,
+  migrationsRun: false,
+  synchronize: false,
+  logging: process.env.APP_STAGE === 'development',
+  entityPrefix: process.env.DB_ENTITY_PREFIX || '',
+  entities: ['src/**/*.entity.ts'],
+  migrations: ['database/migrations/*.ts'],
+  cli: {
+    migrationsDir: 'database/migrations',
+  },
+  factories: ['database/factories/**/*{.ts,.js}'],
+  seeds: ['database/seeds/**/*{.ts,.js}'],
+};
